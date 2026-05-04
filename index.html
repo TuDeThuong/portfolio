@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="Portfolio of Anh Tu Nguyen." />
-    <title>Anh Tu Nguyen | Home</title>
+    <meta name="description" content="Portfolio de Anh Tu Nguyen." />
+    <title>Anh Tu Nguyen | Accueil</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="preload" href="styles.css" as="style" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="is-loading">
+  <body class="is-loading theme-dark">
     <div class="page-intro" aria-hidden="true">
       <div class="intro-half intro-top"></div>
       <div class="intro-center-text intro-text-top">ANH TU NGUYEN</div>
@@ -26,32 +26,69 @@
     </div>
 
     <header class="site-header">
-      <a href="index.html" class="logo">ANH TU</a>
-      <button class="menu-toggle" aria-label="Toggle menu">Menu</button>
+      <a href="index.html" class="logo" aria-label="Accueil"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" focusable="false"><path d="M12 3.2 3 10.4V21h6.2v-5.8h5.6V21H21V10.4L12 3.2z" fill="currentColor"/></svg></a>
+      <button class="menu-toggle" aria-label="Toggle menu" data-i18n-aria-label="menu_toggle">Menu</button>
       <nav class="site-nav">
-        <a href="experience.html">Experience</a>
-        <a href="education.html">Education</a>
-        <a href="contact.html">Contact</a>
+        <a href="experience.html" data-i18n="nav_experience">Expérience</a>
+        <a href="education.html" data-i18n="nav_education">Formation</a>
+        <a href="contact.html" data-i18n="nav_contact">Contact</a>
       </nav>
+      <div class="header-controls">
+        <button class="control-btn toggle-btn" id="theme-toggle" type="button" aria-label="Changer le theme"></button>
+        <button class="control-btn toggle-btn" id="lang-toggle" type="button" aria-label="Changer la langue"></button>
+      </div>
     </header>
 
     <main>
       <section class="hero">
         <figure class="hero-photo">
-          <img src="assets/profile-placeholder.svg" alt="Portrait of Anh Tu Nguyen" width="220" height="220" loading="eager" decoding="async" />
+          <img src="assets/profile-placeholder.svg" alt="Portrait de Anh Tu Nguyen" width="220" height="220" loading="eager" decoding="async" data-i18n-alt="hero_photo_alt" />
         </figure>
-        <p class="eyebrow">Alternance Candidate</p>
+        <p class="eyebrow" data-i18n="hero_eyebrow">Candidate en alternance</p>
         <h1>Anh Tu Nguyen</h1>
-        <p class="hero-copy">Etudiante en Master 2 Gestion de Production, Logistique, Achats. Recherche d'alternance rythme 2 semaines / 2 semaines.</p>
+        <p class="hero-copy" data-i18n="hero_copy">Etudiante en Master 2 Gestion de Production, Logistique, Achats. Recherche d'alternance rythme 2 semaines / 2 semaines.</p>
         <div class="hero-actions">
-          <a href="experience.html" class="btn btn-primary">Voir experiences</a>
-          <a href="contact.html" class="btn btn-secondary">Me contacter</a>
+          <a href="experience.html" class="btn btn-primary" data-i18n="hero_cta_exp">Voir expériences</a>
+          <a href="contact.html" class="btn btn-secondary" data-i18n="hero_cta_contact">Me contacter</a>
         </div>
         <div class="hero-metrics">
           <article><h3>2025-2027</h3><p>Master GPLA - IAE Clermont Auvergne</p></article>
-          <article><h3>+3</h3><p>Stages professionnels</p></article>
-          <article><h3>3</h3><p>Langues parlees</p></article>
+          <article><h3>+3</h3><p data-i18n="metric_internships">Stages professionnels</p></article>
+          <article class="metric-interactive">
+            <button class="metric-toggle" type="button" aria-expanded="false" aria-controls="languages-panel">
+              <h3>3</h3>
+              <p data-i18n="metric_languages">Langues parlées</p>
+            </button>
+          </article>
         </div>
+
+        <section id="languages-panel" class="languages-panel" hidden>
+          <h2 data-i18n="languages_title">Langues</h2>
+          <ul>
+            <li data-i18n="lang_fr">Français: niveau intermédiaire avancé (TCF 481/699)</li>
+            <li data-i18n="lang_en">Anglais: courant (TOEIC 925/990)</li>
+            <li data-i18n="lang_vi">Vietnamien: langue maternelle</li>
+          </ul>
+        </section>
+
+        <section class="skills-home">
+          <p class="eyebrow" data-i18n="skills_eyebrow">Compétences</p>
+          <h2 data-i18n="skills_title">Mes compétences principales</h2>
+          <div class="skills-grid">
+            <article>
+              <h3 data-i18n="skill_supply_title">Supply Chain</h3>
+              <p data-i18n="skill_supply_text">Planification de la production, gestion des stocks, pilotage des flux logistiques, approvisionnements et sourcing international.</p>
+            </article>
+            <article>
+              <h3 data-i18n="skill_data_title">Analyse & Data</h3>
+              <p data-i18n="skill_data_text">Excel avancé, VBA, SQL, Power BI, analyse de données et prévision de la demande.</p>
+            </article>
+            <article>
+              <h3 data-i18n="skill_tools_title">Outils</h3>
+              <p data-i18n="skill_tools_text">SAP S/4HANA, SAGE X3 et Pack Office pour le suivi opérationnel et le reporting.</p>
+            </article>
+          </div>
+        </section>
       </section>
     </main>
 
