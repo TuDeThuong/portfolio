@@ -4,7 +4,7 @@ const siteHeader = document.querySelector('.site-header');
 const year = document.getElementById('year');
 const orbA = document.querySelector('.orb-a');
 const orbB = document.querySelector('.orb-b');
-const languageToggleMetric = document.querySelector('.metric-toggle');
+const languageToggleMetric = document.querySelector('.metric-link.metric-toggle');
 const languagePanel = document.getElementById('languages-panel');
 const themeToggle = document.getElementById('theme-toggle');
 const langToggle = document.getElementById('lang-toggle');
@@ -12,7 +12,7 @@ const langToggle = document.getElementById('lang-toggle');
 const SCROLL_KEY = 'portfolio_scroll_y';
 const THEME_KEY = 'portfolio_theme';
 const LANG_KEY = 'portfolio_lang';
-const DEFAULT_THEME = 'dark';
+const DEFAULT_THEME = 'light';
 const DEFAULT_LANG = 'fr';
 
 const i18n = {
@@ -24,7 +24,7 @@ const i18n = {
     theme_light: 'Mode clair',
     theme_dark: 'Mode sombre',
     hero_photo_alt: 'Portrait de Anh Tu Nguyen',
-    hero_eyebrow: 'Candidate en alternance',
+    hero_eyebrow: 'Candidature en alternance',
     hero_copy: "Etudiante en Master 2 Gestion de Production, Logistique, Achats. Recherche d'alternance rythme 2 semaines / 2 semaines.",
     hero_cta_exp: 'Voir expériences',
     hero_cta_contact: 'Me contacter',
@@ -312,7 +312,8 @@ if (orbA && orbB) {
 }
 
 if (languageToggleMetric && languagePanel) {
-  languageToggleMetric.addEventListener('click', () => {
+  languageToggleMetric.addEventListener('click', (event) => {
+    event.preventDefault();
     const isExpanded = languageToggleMetric.getAttribute('aria-expanded') === 'true';
     languageToggleMetric.setAttribute('aria-expanded', String(!isExpanded));
     languagePanel.hidden = isExpanded;
